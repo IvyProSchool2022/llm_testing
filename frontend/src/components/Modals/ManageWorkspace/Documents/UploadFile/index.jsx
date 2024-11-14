@@ -78,9 +78,9 @@ export default function UploadFile({
   return (
     <div>
       <div
-        className={`w-[560px] border-2 border-dashed rounded-2xl bg-zinc-900/50 p-3 ${
+        className={`w-[560px] border-2 border-dashed light:border-[#686C6F] rounded-2xl bg-theme-bg-primary transition-colors duration-300 light:bg-[#E0F2FE] p-3 ${
           ready ? "cursor-pointer" : "cursor-not-allowed"
-        } hover:bg-zinc-900/90`}
+        } hover:bg-theme-bg-secondary light:hover:bg-transparent`}
         {...getRootProps()}
       >
         <input {...getInputProps()} />
@@ -97,7 +97,7 @@ export default function UploadFile({
           </div>
         ) : files.length === 0 ? (
           <div className="flex flex-col items-center justify-center">
-            <CloudArrowUp className="w-8 h-8 text-white/80" />
+            <CloudArrowUp className="w-8 h-8 text-white/80 light:invert" />
             <div className="text-white text-opacity-80 text-sm font-semibold py-1">
               Click to upload or drag and drop
             </div>
@@ -133,7 +133,7 @@ export default function UploadFile({
           disabled={fetchingUrl}
           name="link"
           type="url"
-          className="disabled:bg-zinc-600 disabled:text-slate-300 bg-zinc-900 text-white placeholder:text-white/20 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-2.5"
+          className="disabled:bg-theme-settings-input-bg disabled:text-theme-settings-input-placeholder bg-theme-settings-input-bg text-white placeholder:text-theme-settings-input-placeholder text-sm rounded-lg focus:outline-primary-button active:outline-primary-button outline-none block w-3/4 p-2.5"
           placeholder={"https://example.com"}
           autoComplete="off"
         />
